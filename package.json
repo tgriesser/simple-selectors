@@ -82,7 +82,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tgriesser/selectors.git"
+    "url": "https://github.com/tgriesser/simple-selectors.git"
   },
   "license": "MIT",
   "devDependencies": {
