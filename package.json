@@ -1,6 +1,6 @@
 {
   "name": "simple-selectors",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simplified Selector Functions",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",

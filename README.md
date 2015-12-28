@@ -26,14 +26,15 @@ For more detailed information about the rationale behind selectors, please visit
 
 ## API
 
-- [`createSelector`](#createSelector)
-- [`createSimpleSelector`](#createSimpleSelector)
-- [`memoizedSelectorCreator`](#memoizedSelectorCreator)
+- [`createSelector(...selectors, resultFunc)`](#createSelector)
+- [`createSelector(object)`](#createSelectorStructured)
+- [`createSimpleSelector(...)`](#createSimpleSelector)
+- [`memoizedSelectorCreator(equalityCheck)(...)`](#memoizedSelectorCreator)
+
+<div id="createSelector"></div>
 
 ### createSelector(...inputSelectors | [inputSelectors], resultFunc)
 ### createSelector(structuredSelector)
-
-<div id="createSelector"></div>
 
 Takes one or more selectors, or an array of selectors, computes their values and passes them as arguments to `resultFn`.
 
@@ -80,6 +81,8 @@ const totalSelector = createSelector(
 
 ```
 
+<div id="createSelectorStructured"></div>
+
 #### Structured Selector:
 
 `createSelector` may also take an object whose properties are input-selectors and returns a structured selector. This "structured selector" returns an object with the same keys as the `inputSelectors` argument, but with the selectors replaced with their values.
@@ -112,16 +115,16 @@ const nestedSelector = createSelector({
 
 ```
 
+<div id="createSimpleSelector"></div>
+
 ### createSimpleSelector(...inputSelectors | [inputSelectors], resultFunc)
 ### createSimpleSelector(structuredSelector)
 
-<div id="createSimpleSelector"></div>
-
 Same API as `createSelector`, however it does not perform any memoization on the selector.
 
-### memoizedSelectorCreator(equalityCheck)
-
 <div id="memoizedSelectorCreator"></div>
+
+### memoizedSelectorCreator(equalityCheck)
 
 `memoizedSelectorCreator` can be used to make a customized version of `createSelector`.
 
