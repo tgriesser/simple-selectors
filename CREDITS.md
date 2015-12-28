@@ -1,5 +1,7 @@
 # CREDITS
 
+* Based on the Reselect library, credits below:
+
 * Based on a proposal for Redux by Robert Binna
   (https://github.com/speedskater) and Philip Spitzlinger. Lots of the
   basic structure of the code is thanks to this.
