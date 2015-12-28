@@ -130,7 +130,7 @@ function makePureSelector(final, selectors) {
     case 1: return pureSelectorAry1(final, selectors[0])
     case 2: return pureSelectorAry2(final, selectors[0], selectors[1])
     case 3: return pureSelectorAry3(final, selectors[0], selectors[1], selectors[2])
-    default: return pureSelectorAryN(final, ...selectors)
+    default: return pureSelectorAryN(final, selectors)
   }
 }
 function makeSelector(final, selectors) {
@@ -138,7 +138,7 @@ function makeSelector(final, selectors) {
     case 1: return selectorAry1(final, selectors[0])
     case 2: return selectorAry2(final, selectors[0], selectors[1])
     case 3: return selectorAry3(final, selectors[0], selectors[1], selectors[2])
-    default: return selectorAryN(final, ...selectors)
+    default: return selectorAryN(final, selectors)
   }
 }
 function makePureMemoizedSelector(eq, final, selectors) {
@@ -146,7 +146,7 @@ function makePureMemoizedSelector(eq, final, selectors) {
     case 1: return pureMemoizedAry1(eq, final, selectors[0])
     case 2: return pureMemoizedAry2(eq, final, selectors[0], selectors[1])
     case 3: return pureMemoizedAry3(eq, final, selectors[0], selectors[1], selectors[2])
-    default: return pureMemoizedAryN(eq, final, ...selectors)
+    default: return pureMemoizedAryN(eq, final, selectors)
   }
 }
 function makeMemoizedSelector(eq, final, selectors) {
@@ -154,7 +154,7 @@ function makeMemoizedSelector(eq, final, selectors) {
     case 1: return memoizedAry1(eq, final, selectors[0])
     case 2: return memoizedAry2(eq, final, selectors[0], selectors[1])
     case 3: return memoizedAry3(eq, final, selectors[0], selectors[1], selectors[2])
-    default: return memoizedAryN(eq, final, ...selectors)
+    default: return memoizedAryN(eq, final, selectors)
   }
 }
 

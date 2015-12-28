@@ -95,17 +95,27 @@ suite('selector', () => {
     assert.notEqual(selector({ a: 3, b: 2 }), obj)
   })
   test('can accept props', () => {
-    let called = 0
     const selector = createSelector(
       state => state.a,
       state => state.b,
       (state, props) => props.c,
       (a, b, c) => {
-        called++
         return a + b + c
       }
     )
     assert.equal(selector({ a: 1, b: 2 }, { c: 100 }), 103)
+  })
+  test('can accept more than 3 selectors', () => {
+    const selector = createSelector(
+      state => state.a,
+      state => state.b,
+      (state, props) => props.c,
+      (state, props) => props.d,
+      (a, b, c, d) => {
+        return a + b + c + d
+      }
+    )
+    assert.equal(selector({ a: 1, b: 2 }, { c: 100, d: 200 }), 303)
   })
   test('chained selector', () => {
     const selector1 = createSelector(
