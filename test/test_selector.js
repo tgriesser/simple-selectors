@@ -117,6 +117,18 @@ suite('selector', () => {
     )
     assert.equal(selector({ a: 1, b: 2 }, { c: 100, d: 200 }), 303)
   })
+  test('checks both arity and presence of "arguments" keyword for fn purity', () => {
+    const selector = createSelector(
+      state => state.a,
+      state => state.b,
+      state => state.c,
+      (state, props = {}) => props.d,
+      (a, b, c, d) => {
+        return a + b + c + d
+      }
+    )
+    assert.equal(selector({ a: 1, b: 2, c: 3 }, { d: 4 }), 10)
+  })
   test('chained selector', () => {
     const selector1 = createSelector(
       state => state.sub,

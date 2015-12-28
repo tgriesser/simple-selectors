@@ -212,7 +212,7 @@ function getDependencies(funcs) {
   return funcs
 }
 function isPure(fns) {
-  return fns.every(fn => fn.length === 1)
+  return fns.every(fn => fn.length === 1 && String(fn).indexOf('arguments') === -1)
 }
 function isPlainObject(o) {
   return typeof o == 'object' && o !== null && o.constructor === Object
