@@ -22,10 +22,10 @@ function selectorAry3(f, a, b, c) {
 function pureSelectorAry3(f, a, b, c) {
   return s => f(a(s), b(s), c(s))
 }
-function selectorAryN(f, ...fns) {
+function selectorAryN(f, fns) {
   return (s, p) => f(...fns.map(r => r(s, p)))
 }
-function pureSelectorAryN(f, ...fns) {
+function pureSelectorAryN(f, fns) {
   return s => f(...fns.map(r => r(s)))
 }
 function memoizedAry1(eq, f, a) {
